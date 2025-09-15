@@ -1,15 +1,15 @@
 ### **Report on Data Visualization Library Inquiry**
-**Date:** September 16, 2025
-**Location:** Kuching, Sarawak, Malaysia
-**Topic:** An exhaustive exploration and ranking of data visualization libraries.
 
-***
+**Date:** 16th of September, 2025
+**Subject:** An exhaustive exploration and ranking of data visualization libraries.
+
+---
 
 ### Introduction
 
 This report summarizes a multi-stage discussion that began with a request for a comprehensive list of all data visualization libraries and evolved into a detailed, context-sensitive ranking for various use cases, including general programming and mobile development. The inquiry followed a "scorched earth" methodology, progressively drilling down from popular tools to niche, foundational, and platform-specific technologies.
 
-***
+---
 
 ### Phase 1: Exhaustive Library Enumeration
 
@@ -24,7 +24,7 @@ Persistent follow-up questions ("Is that all?") prompted a deeper, more exhausti
 
 This phase concluded by establishing that the definition of a "visualization library" could be expanded to include game engines (**Unreal Engine**), BI platforms (**Tableau**), and even spreadsheet software (**Microsoft Excel**), effectively exhausting the category.
 
-***
+---
 
 ### Phase 2: Subjective Ranking and Refinement
 
@@ -40,7 +40,7 @@ The inquiry was then refined with a specific criterion: **laziness**, defined as
 2.  **Seaborn / ggplot2**: Valued for producing beautiful plots with concise, high-level commands.
 3.  **Plotly Express**: The top choice for generating interactive plots with minimal effort.
 
-***
+---
 
 ### Phase 3: Mobile Development Pivot
 
@@ -50,7 +50,7 @@ The final stage of the discussion pivoted to the mobile development landscape, e
 * **For Native iOS**: Apple's official **Swift Charts** framework was identified as the definitive modern choice due to its perfect integration with SwiftUI.
 * **For Native Android**: **MPAndroidChart** was highlighted as the long-standing, mature, and feature-rich standard, with the modern **Vico** library noted as an excellent choice for new projects using Jetpack Compose.
 
-***
+---
 
 ### Conclusion
 

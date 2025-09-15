@@ -1,11 +1,11 @@
 ### **Analysis of Cross-Platform Front-End Frameworks**
 
-**Date:** September 15, 2025
+**Date:** 15th of September, 2025
 **Subject:** An exhaustive analysis and selection of a "code once, deploy anywhere" front-end framework.
 
 ---
 
-### **1.0 Introduction and Initial Exploration**
+### 1.0 Introduction and Initial Exploration
 
 The inquiry began with a request for a "scorched earth" list of all front-end frameworks capable of producing applications for web, mobile, and desktop from a single codebase. The initial analysis identified the most prominent frameworks, which was then expanded through several iterations at the user's request to ensure absolute completeness.
 
@@ -21,7 +21,7 @@ This comprehensive list formed the basis for a more focused analysis.
 
 ---
 
-### **2.0 Establishing and Refining Selection Criteria**
+### 2.0 Establishing and Refining Selection Criteria
 
 The objective evolved from simple enumeration to a qualitative ranking. The initial ranking was based on general industry metrics: adoption, performance, ecosystem maturity, and corporate backing.
 
@@ -36,14 +36,14 @@ Under this new "laziness" paradigm, **Quasar Framework** emerged as the top cont
 
 ---
 
-### **3.0 Process of Elimination and Comparative Analysis**
+### 3.0 Process of Elimination and Comparative Analysis
 
 With a focus on minimizing effort and avoiding specific friction points, a systematic process of elimination was undertaken. The user made several key decisions:
 
-#### **3.1 Elimination of React Native**
+#### 3.1 Elimination of React Native
 React Native was dropped due to its **fragmented building process**. While powerful for mobile, extending it to web and desktop requires manually integrating separate, community-maintained libraries (`react-native-web`, `react-native-windows`, etc.). This approach necessitates that the developer act as a "system integrator," managing multiple build configurations and resolving platform-specific dependencies, directly contradicting the "laziness" principle.
 
-#### **3.2 Elimination of Ionic Framework**
+#### 3.2 Elimination of Ionic Framework
 Ionic was dropped for two primary reasons:
 1.  **Web-Based Performance Ceiling**: As the app runs in a WebView, it has a theoretical performance ceiling compared to truly native solutions. While not a day-and-night difference for most apps, it was a compromise the user wished to avoid.
 2.  **Less Integrated Tooling**: While very efficient, Ionic is not as holistically integrated as Quasar. Desktop support, for instance, requires manual integration of Electron rather than being a first-class, built-in feature of the CLI.
@@ -52,7 +52,7 @@ With **native look and feel** explicitly stated as a non-criterion, the field wa
 
 ---
 
-### **4.0 Final Contender Analysis: Quasar vs. Flutter**
+### 4.0 Final Contender Analysis: Quasar vs. Flutter
 
 The final decision hinged on a direct comparison between the two remaining frameworks, representing two distinct development philosophies.
 
@@ -62,7 +62,7 @@ The final decision hinged on a direct comparison between the two remaining frame
 
 ---
 
-### **5.0 Conclusion and Final Decision**
+### 5.0 Conclusion and Final Decision
 
 After a thorough and logical elimination process, the user arrived at a clear and well-defined conclusion.
 
