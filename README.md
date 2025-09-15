@@ -1,4 +1,8 @@
-### F.L.O.R.E.N.C.E.
+# F.L.O.R.E.N.C.E.
+
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+[![Made with Love](https://img.shields.io/badge/made%20with-%E2%9D%A4%EF%B8%8F-red.svg)]()
+
 **F**ramework for **L**ongitudinal **O**bservation and **R**esponse via **E**mbedded **N**eural **C**ognitive **E**ngine is a prototype digital health platform designed for the monitoring and management of chronic diseases. This project leverages AI to provide actionable insights for both patients and clinicians, aiming to enhance patient outcomes through real-time data and predictive analytics.
 
 ---
@@ -10,8 +14,6 @@ Chronic disease patients often face challenges with fragmented health informatio
 ---
 
 ### About This Project
-
-**Project Title:** Prototype Development of an AI-Enabled Digital Health Platform for Chronic Disease Monitoring
 
 This is an industry project for the **COS40005 Computing Technology Project A** course at **Swinburne University of Technology, Sarawak Campus**.
 
