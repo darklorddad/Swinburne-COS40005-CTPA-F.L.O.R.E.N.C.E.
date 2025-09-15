@@ -19,3 +19,23 @@ This is an industry project for the **COS40005 Computing Technology Project A** 
 
 * **Client**: BioTective Sdn Bhd, a Sarawak-based digital health company focused on innovative solutions for chronic disease management.
 * **Supervisor**: Ts. Dr. Vong Wan Tze, Senior Lecturer at the School of Information and Communication Technologies.
+
+---
+
+### License
+
+This project is licensed under the **GNU Affero General Public License v3.0**. See the [LICENSE](LICENSE) file for full details.
+
+---
+
+### Author and Citation
+
+This project was principally developed by:
+
+* **[darklorddad](https://github.com/darklorddad)**
+* **[Crazyfier](https://github.com/Crazyfier)**
+* **[ashleyjong](https://github.com/ashleyjong)**
+* **[Basilagas21](https://github.com/Basilagas21)**
+* **[Harriseu](https://github.com/Harriseu)**
+
+If you use this software in your research, projects, or work, we would appreciate it if you could cite it.
