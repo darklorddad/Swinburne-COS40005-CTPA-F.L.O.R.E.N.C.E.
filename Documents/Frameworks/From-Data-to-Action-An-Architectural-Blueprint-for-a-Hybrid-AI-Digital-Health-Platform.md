@@ -5,7 +5,7 @@
 
 ---
 
-### 1.0 Executive Summary
+### Executive Summary
 
 This report outlines a recommended technical architecture and development strategy for the proposed digital health platform. The core of the recommendation is a modern, scalable technology stack featuring a **Flutter** frontend, a **Python** backend, and **Supabase** for database and backend-as-a-service functionalities.
 
@@ -17,7 +17,7 @@ For the initial prototype development, a strategy centered on **100% synthetic d
 
 ---
 
-### 2.0 Core Technology Stack
+### 1.0 Core Technology Stack
 
 The selected technology stack is designed for rapid development, scalability, and alignment with the project's AI focus.
 
@@ -27,11 +27,11 @@ The selected technology stack is designed for rapid development, scalability, an
 
 ---
 
-### 3.0 Artificial Intelligence Strategy
+### 2.0 Artificial Intelligence Strategy
 
 The project will employ a sophisticated, multi-layered AI strategy that prioritizes applying existing powerful models over training new ones from scratch.
 
-**3.1 The Hybrid AI Model: Precision and Reasoning**
+**2.1 The Hybrid AI Model: Precision and Reasoning**
 A single AI model is not optimal for all tasks. The recommended hybrid approach uses two specialized AI components that work in tandem:
 
 1.  **Traditional Predictive Model (The "Quantitative Analyst"):**
@@ -44,7 +44,7 @@ A single AI model is not optimal for all tasks. The recommended hybrid approach 
     *   **Technology:** A powerful foundation model (e.g., GPT-4, Gemini) accessed via a secure API.
     *   **Function:** It takes the numerical output from the predictive model as a key piece of context and generates personalized recommendations, health summaries, and alerts. Its role is insight and communication.
 
-**3.2 Backend LLM Agent for Automation (Milestones 3 & 4)**
+**2.2 Backend LLM Agent for Automation (Milestones 3 & 4)**
 For complex backend operations like generating a weekly summary, the LLM will be implemented as an **autonomous agent**. This architecture handles multi-step tasks that require gathering information before making a final conclusion.
 
 *   **Workflow:**
@@ -58,23 +58,23 @@ This agentic approach allows the AI to perform complex, dynamic analysis without
 
 ---
 
-### 4.0 System Architecture and Data Flow
+### 3.0 System Architecture and Data Flow
 
 *   **Frontend-Backend Communication:** The Flutter app will communicate with the Python backend via a **REST API**. For simple data retrieval (e.g., plotting a chart), Flutter will securely and directly query Supabase. For tasks requiring AI analysis, Flutter will call the Python API, which will then orchestrate the AI models and database queries.
 *   **Real-time Data Handling:** The system will use a combination of **event-driven triggers** (e.g., a database webhook calls the Python backend when a new meal is logged) and **scheduled tasks** (e.g., a nightly job to generate summaries) to process the continuous flow of data. The AI models are not stateful; they analyze snapshots of data on demand.
 
 ---
 
-### 5.0 Security, Privacy, and Compliance
+### 4.0 Security, Privacy, and Compliance
 
-**5.1 Role-Based Access Control (RBAC)**
+**4.1 Role-Based Access Control (RBAC)**
 Security will be enforced at the database level using Supabase's **Row-Level Security (RLS)**.
 *   **Implementation:** User roles ('patient', 'clinician') will be defined. RLS policies written in SQL will ensure:
     1.  Patients can **only ever** access their own data.
     2.  Clinicians can **only** access data for patients they are explicitly assigned to.
 *   **Impact:** This provides a foundational layer of security that prevents accidental data leakage, regardless of the application logic.
 
-**5.2 HIPAA Compliance and the Business Associate Agreement (BAA)**
+**4.2 HIPAA Compliance and the Business Associate Agreement (BAA)**
 Handling real patient data (PHI) carries a legal requirement for HIPAA compliance in many jurisdictions.
 *   **The Rule:** Standard consumer AI APIs (OpenAI, Google) are not HIPAA compliant. Sending PHI to them is a violation of data privacy laws.
 *   **The Solution:** For production, the system must use a HIPAA-eligible service like **Azure OpenAI Service** or **Google Cloud Vertex AI**.
@@ -82,7 +82,7 @@ Handling real patient data (PHI) carries a legal requirement for HIPAA complianc
 
 ---
 
-### 6.0 Recommended Development and Deployment Plan
+### Recommended Development and Deployment Plan
 
 Given the status of the developer as an individual contractor/student, a phased approach is necessary to manage legal and ethical responsibilities.
 
