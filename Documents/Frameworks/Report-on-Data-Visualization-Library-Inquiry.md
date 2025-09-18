@@ -1,4 +1,4 @@
-### **Report on Data Visualization Library Inquiry**
+### **Data Visualization Library Inquiry**
 
 **Date:** 16th of September, 2025
 **Subject:** An exhaustive exploration and ranking of data visualization libraries.
