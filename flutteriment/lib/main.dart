@@ -42,8 +42,8 @@ class SignInScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       SizedBox(height: constraints.maxHeight * 0.1),
-                      Image.network(
-                        "https://i.postimg.cc/nz0YBQcH/Logo-light.png",
+                      Image.asset(
+                        "images/Florence.png",
                         height: 100,
                       ),
                       SizedBox(height: constraints.maxHeight * 0.1),
