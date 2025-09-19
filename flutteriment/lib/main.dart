@@ -209,6 +209,17 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Home'),
         automaticallyImplyLeading: false,
+        actions: <Widget>[
+          TextButton(
+            onPressed: () {
+              Navigator.pushReplacementNamed(context, '/');
+            },
+            child: const Text(
+              'Login/Register',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        ],
       ),
       body: const Center(
         child: Text(
