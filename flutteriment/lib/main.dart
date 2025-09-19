@@ -12,89 +12,161 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutteriment',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF00BF6D)),
         useMaterial3: true,
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => const LoginPage(),
+        '/': (context) => SignInScreen(),
         '/home': (context) => const HomePage(),
       },
     );
   }
 }
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
-
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
+class SignInScreen extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
 
-  @override
-  void dispose() {
-    _emailController.dispose();
-    _passwordController.dispose();
-    super.dispose();
-  }
-
+  SignInScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login / Register'),
-      ),
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Form(
-              key: _formKey,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  TextFormField(
-                    controller: _emailController,
-                    decoration: const InputDecoration(
-                      labelText: 'Email',
-                      border: OutlineInputBorder(),
-                    ),
-                    keyboardType: TextInputType.emailAddress,
-                  ),
-                  const SizedBox(height: 20),
-                  TextFormField(
-                    controller: _passwordController,
-                    decoration: const InputDecoration(
-                      labelText: 'Password',
-                      border: OutlineInputBorder(),
-                    ),
-                    obscureText: true,
-                  ),
-                  const SizedBox(height: 30),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          SafeArea(
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                return SingleChildScrollView(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Column(
                     children: [
-                      ElevatedButton(
-                        onPressed: () {
-                          // Login functionality not implemented
-                        },
-                        child: const Text('Login'),
+                      SizedBox(height: constraints.maxHeight * 0.1),
+                      Image.network(
+                        "https://i.postimg.cc/nz0YBQcH/Logo-light.png",
+                        height: 100,
                       ),
-                      ElevatedButton(
-                        onPressed: () {
-                          // Register functionality not implemented
-                        },
-                        child: const Text('Register'),
+                      SizedBox(height: constraints.maxHeight * 0.1),
+                      Text(
+                        "Sign In",
+                        style: Theme.of(context)
+                            .textTheme
+                            .headlineSmall!
+                            .copyWith(fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(height: constraints.maxHeight * 0.05),
+                      Form(
+                        key: _formKey,
+                        child: Column(
+                          children: [
+                            TextFormField(
+                              decoration: const InputDecoration(
+                                hintText: 'Phone',
+                                filled: true,
+                                fillColor: Color(0xFFF5FCF9),
+                                contentPadding: EdgeInsets.symmetric(
+                                    horizontal: 16.0 * 1.5, vertical: 16.0),
+                                border: OutlineInputBorder(
+                                  borderSide: BorderSide.none,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(50)),
+                                ),
+                              ),
+                              keyboardType: TextInputType.phone,
+                              onSaved: (phone) {
+                                // Save it
+                              },
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(vertical: 16.0),
+                              child: TextFormField(
+                                obscureText: true,
+                                decoration: const InputDecoration(
+                                  hintText: 'Password',
+                                  filled: true,
+                                  fillColor: Color(0xFFF5FCF9),
+                                  contentPadding: EdgeInsets.symmetric(
+                                      horizontal: 16.0 * 1.5, vertical: 16.0),
+                                  border: OutlineInputBorder(
+                                    borderSide: BorderSide.none,
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(50)),
+                                  ),
+                                ),
+                                onSaved: (passaword) {
+                                  // Save it
+                                },
+                              ),
+                            ),
+                            ElevatedButton(
+                              onPressed: () {
+                                if (_formKey.currentState!.validate()) {
+                                  _formKey.currentState!.save();
+                                  // Navigate to the main screen
+                                  Navigator.pushReplacementNamed(
+                                      context, '/home');
+                                }
+                              },
+                              style: ElevatedButton.styleFrom(
+                                elevation: 0,
+                                backgroundColor: const Color(0xFF00BF6D),
+                                foregroundColor: Colors.white,
+                                minimumSize: const Size(double.infinity, 48),
+                                shape: const StadiumBorder(),
+                              ),
+                              child: const Text("Sign in"),
+                            ),
+                            const SizedBox(height: 16.0),
+                            TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                'Forgot Password?',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .copyWith(
+                                      color: Theme.of(context)
+                                          .textTheme
+                                          .bodyLarge!
+                                          .color!
+                                          .withOpacity(0.64),
+                                    ),
+                              ),
+                            ),
+                            TextButton(
+                              onPressed: () {},
+                              child: Text.rich(
+                                const TextSpan(
+                                  text: "Don’t have an account? ", 
+                                  children: [
+                                    TextSpan(
+                                      text: "Sign Up",
+                                      style:
+                                          TextStyle(color: Color(0xFF00BF6D)),
+                                    ),
+                                  ],
+                                ),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .copyWith(
+                                      color: Theme.of(context)
+                                          .textTheme
+                                          .bodyLarge!
+                                          .color!
+                                          .withOpacity(0.64),
+                                    ),
+                              ),
+                            ),
+                            const SizedBox(height: 60), // Space for bypass button
+                          ],
+                        ),
                       ),
                     ],
                   ),
-                ],
-              ),
+                );
+              },
             ),
           ),
           Align(
@@ -151,12 +223,12 @@ class _HomePageState extends State<HomePage> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
+            icon: Icon(Icons.search),
+            label: 'Search',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
+            icon: Icon(Icons.person),
+            label: 'Profile',
           ),
         ],
         currentIndex: _selectedIndex,
