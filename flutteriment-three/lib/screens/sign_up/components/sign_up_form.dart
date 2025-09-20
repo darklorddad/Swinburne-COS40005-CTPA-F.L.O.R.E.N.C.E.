@@ -12,7 +12,7 @@ class SignUpForm extends StatefulWidget {
   _SignUpFormState createState() => _SignUpFormState();
 }
 
-class SignUpFormState extends State<SignUpForm> {
+class _SignUpFormState extends State<SignUpForm> {
   final _formKey = GlobalKey<FormState>();
   String? email;
   String? password;
@@ -106,7 +106,7 @@ class SignUpFormState extends State<SignUpForm> {
           const SizedBox(height: 20),
           TextFormField(
             obscureText: true,
-            onSaved: (newValue) => conform_password = newValue,
+            onSaved: (newValue) => confirmPassword = newValue,
             onChanged: (value) {
               if (value.isNotEmpty) {
                 removeError(error: kPassNullError);

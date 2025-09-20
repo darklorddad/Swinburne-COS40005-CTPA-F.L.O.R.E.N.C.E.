@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
-import '../../../models/Product.dart';
+import '../../../models/product.dart';
 
 class ProductImages extends StatefulWidget {
   const ProductImages({
@@ -81,7 +81,7 @@ class _SmallProductImageState extends State<SmallProductImage> {
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
-              color: kPrimaryColor.withOpacity(widget.isSelected ? 1 : 0)),
+              color: widget.isSelected ? kPrimaryColor : Colors.transparent),
         ),
         child: Image.asset(widget.image),
       ),

@@ -11,7 +11,7 @@ class OtpForm extends StatefulWidget {
   _OtpFormState createState() => _OtpFormState();
 }
 
-class OtpFormState extends State<OtpForm> {
+class _OtpFormState extends State<OtpForm> {
   FocusNode? pin2FocusNode;
   FocusNode? pin3FocusNode;
   FocusNode? pin4FocusNode;
