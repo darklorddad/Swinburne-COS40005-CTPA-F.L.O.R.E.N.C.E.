@@ -62,7 +62,7 @@ class OrderPreviewTile extends StatelessWidget {
                         divisions: 3,
                         onChanged: (v) {},
                         activeColor: _orderColor(),
-                        inactiveColor: AppColors.placeholder.withOpacity(0.2),
+                        inactiveColor: AppColors.placeholder.withAlpha((255 * 0.2).round()),
                       ),
                     ),
                   ],
@@ -143,9 +143,6 @@ class OrderPreviewTile extends StatelessWidget {
         return 3;
       case OrderStatus.cancelled:
         return 3;
-
-      default:
-        return 0;
     }
   }
 
@@ -161,9 +158,6 @@ class OrderPreviewTile extends StatelessWidget {
         return const Color(0xFF41AA55);
       case OrderStatus.cancelled:
         return const Color(0xFFFF1F1F);
-
-      default:
-        return Colors.red;
     }
   }
 }
