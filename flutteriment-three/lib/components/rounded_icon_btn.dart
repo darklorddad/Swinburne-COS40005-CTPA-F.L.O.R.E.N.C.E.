@@ -26,7 +26,7 @@ class RoundedIconBtn extends StatelessWidget {
             BoxShadow(
               offset: const Offset(0, 6),
               blurRadius: 10,
-              color: const Color(0xFFB0B0B0).withOpacity(0.2),
+              color: const Color(0xFFB0B0B0).withAlpha(51),
             ),
         ],
       ),
