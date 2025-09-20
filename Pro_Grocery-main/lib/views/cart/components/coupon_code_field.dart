@@ -77,7 +77,7 @@ class _CouponCodeFieldState extends State<CouponCodeField> {
                   style: ElevatedButton.styleFrom(
                     foregroundColor: isFilled ? null : AppColors.placeholder,
                     backgroundColor:
-                        isFilled ? null : Colors.grey.withOpacity(0.3),
+                        isFilled ? null : Colors.grey.withAlpha((255 * 0.3).round()),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),

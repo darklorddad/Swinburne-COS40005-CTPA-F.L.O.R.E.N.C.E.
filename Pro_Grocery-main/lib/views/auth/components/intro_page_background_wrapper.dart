@@ -55,7 +55,7 @@ class _IntroLoginBody extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Colors.black12.withOpacity(0.1),
+                  Colors.black.withOpacity(0.1),
                   Colors.black12,
                   Colors.black54,
                   Colors.black54,

@@ -86,8 +86,6 @@ class OrderStatusRow extends StatelessWidget {
       case OrderStatus.cancelled:
         return const Color(0xFFFF1F1F);
 
-      default:
-        return Colors.red;
     }
   }
 
@@ -104,8 +102,6 @@ class OrderStatusRow extends StatelessWidget {
       case OrderStatus.cancelled:
         return 'Order Cancelled';
 
-      default:
-        return 'Order null';
     }
   }
 
@@ -122,8 +118,6 @@ class OrderStatusRow extends StatelessWidget {
       case OrderStatus.cancelled:
         return AppIcons.delete;
 
-      default:
-        return AppIcons.delete;
     }
   }
 }
