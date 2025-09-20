@@ -43,7 +43,7 @@ class SignInScreen extends StatelessWidget {
                     children: [
                       SizedBox(height: constraints.maxHeight * 0.1),
                       Image.asset(
-                        "images/Florence.png",
+                        "images/FLORENCE-transparent.png",
                         height: 100,
                       ),
                       SizedBox(height: constraints.maxHeight * 0.1),
