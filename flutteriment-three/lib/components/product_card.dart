@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../constants.dart';
-import '../models/Product.dart';
+import '../models/product.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({
@@ -31,7 +31,7 @@ class ProductCard extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: kSecondaryColor.withOpacity(0.1),
+                  color: kSecondaryColor.withAlpha(26),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Image.asset(product.images[0]),
@@ -62,9 +62,7 @@ class ProductCard extends StatelessWidget {
                     height: 24,
                     width: 24,
                     decoration: BoxDecoration(
-                      color: product.isFavourite
-                          ? kPrimaryColor.withOpacity(0.15)
-                          : kSecondaryColor.withOpacity(0.1),
+                      color: product.isFavourite ? kPrimaryColor.withAlpha(38) : kSecondaryColor.withAlpha(26),
                       shape: BoxShape.circle,
                     ),
                     child: SvgPicture.asset(
