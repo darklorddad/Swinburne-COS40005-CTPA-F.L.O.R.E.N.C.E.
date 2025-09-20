@@ -7,11 +7,14 @@ class AppTheme {
     return ThemeData(
       scaffoldBackgroundColor: Colors.white,
       fontFamily: "Muli",
-      appBarTheme: const AppBarTheme(
+      appBarTheme: AppBarTheme(
           backgroundColor: Colors.white,
           elevation: 0,
-          iconTheme: IconThemeData(color: Colors.black),
-          titleTextStyle: TextStyle(color: Colors.black)),
+          iconTheme: const IconThemeData(color: Colors.black),
+          titleTextStyle: Theme.of(context).textTheme.titleLarge?.copyWith(
+                color: Colors.black,
+                fontWeight: FontWeight.bold
+              )),
       textTheme: const TextTheme(
         bodyLarge: TextStyle(color: kTextColor),
         bodyMedium: TextStyle(color: kTextColor),
