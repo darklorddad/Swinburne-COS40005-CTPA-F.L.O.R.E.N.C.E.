@@ -1,21 +1,13 @@
-Of course. A project of this scope and complexity warrants a highly detailed and comprehensive plan to ensure alignment, clarity, and a structured path to success. Expanding the initial plan into a thorough project charter is a critical step.
-
-Here is a significantly more detailed version of the Team and Project Plan, expanded to over 5,000 words, incorporating deep dives into architecture, methodology, risk, and quality assurance, drawing heavily from the provided analysis documents.
-
-***
-
-### **Team and Project Plan: Prototype Development of an AI-Enabled Digital Health Platform for Chronic Disease Monitoring**
-**PORTFOLIO TASK 1**
+# Team and Project Plan
+Portfolio Task 1
 
 **Unit code:** COS40005  
-**Unit Name:** Computing Technology Project A  
-**Submission date:** 23 September 2025
-
-**Version:** 1.0
+**Unit name:** Computing Technology Project A  
+**Submission date:** 26th of September, 2025
 
 ---
 
-### **Introduction**
+### Introduction
 
 This document serves as the comprehensive Team and Project Plan for the development of the "AI-Enabled Digital Health Platform for Chronic Disease Monitoring," undertaken on behalf of BioTective Sdn Bhd. As a formal charter, its purpose is to provide a single source of truth for all project stakeholders, outlining the team structure, communication protocols, project scope, technical architecture, development roadmap, and quality assurance strategy.
 
@@ -29,16 +21,13 @@ The project's vision is to create a functional, high-fidelity prototype that dem
 | Basil Agas | 102778888 | Provided key insights during the AI framework analysis, influencing the decision to adopt a hybrid AI model and the LangChain framework. Contributed to defining the AI-related tasks and deliverables within the project plan. |
 | Edison Ho | 102779496 | Led the in-depth analysis of backend, BaaS, and database technologies. Authored the rationale for selecting the Supabase platform and contributed to outlining the document management, security framework, and quality plan sections. |
 
-**ACKNOWLEDGMENT OF COUNTRY**
-
-Each team member identifies the Traditional Owners of the land they lived on while completing this work (if living in Australia).
-
 ---
-### **PART 1: TEAM CHARTER AND CODE OF CONDUCT**
+
+### PART 1: TEAM CHARTER AND CODE OF CONDUCT
 
 This section defines the team's internal operating structure, roles, responsibilities, and the agreed-upon protocols for communication, collaboration, and conflict resolution. It forms the foundation of the team’s professional conduct.
 
-#### **1. Detailed Team Profile**
+#### 1. Detailed Team Profile
 
 The project team is a well-rounded, multidisciplinary group of computer science students, each bringing a unique specialisation that maps directly to the project's complex requirements. The synergy between their skills in Artificial Intelligence, Software Development, UI/UX Design, and Full-Stack Engineering creates a robust unit capable of tackling this ambitious project.
 
@@ -51,7 +40,7 @@ The project team is a well-rounded, multidisciplinary group of computer science 
 | **Basil Agas** | AI development (NLP, predictive analytics), AI architecture, infrastructure (Cisco, Windows Server). | Analytical, strategic, focus on practical and ethical AI deployment. | Articulates complex technical concepts clearly. | Focuses on developing, deploying, and optimizing the core AI solutions. |
 | **Edison Ho** | Full-stack development (PHP, Python), database management, cybersecurity fundamentals. | Writes clean, maintainable code, strong UI/UX consideration. | Proactive, transparent, presents ideas clearly to ensure team alignment. | Reliable, takes ownership of tasks, ensures smooth integration with other components. |
 
-#### **2. Roles and Responsibilities**
+#### 2. Roles and Responsibilities
 
 To ensure clear ownership and accountability, specific roles have been assigned. These roles are not strictly siloed; collaboration is expected and encouraged. However, the designated role owner holds the primary responsibility for the quality and timely completion of their domain's deliverables.
 
@@ -64,7 +53,7 @@ To ensure clear ownership and accountability, specific roles have been assigned.
 | **Lead AI Engineer** | **Basil Agas** | Basil's specialisation in the architectural and operational aspects of AI systems makes him the ideal candidate to lead the development of the core recommendation engine and automation triggers. **Responsibilities:** Implement the hybrid AI model, train the quantitative predictive model, develop the LangChain tools for the LLM agent, and optimize AI performance and response accuracy. |
 | **Backend Developer** | **Edison Ho** | Edison's hands-on experience in building full-stack applications and managing databases is critical for the project's foundation. **Responsibilities:** Develop the Python backend API (FastAPI), design and implement the Supabase database schema, configure Row-Level Security policies, and ensure seamless data flow between the frontend and the database. |
 
-#### **3. Teamwork Roadmap and Collaboration Framework**
+#### 3. Teamwork Roadmap and Collaboration Framework
 
 This framework outlines the processes and tools the team will use to maintain momentum, ensure transparency, and foster a productive working environment.
 
@@ -99,7 +88,7 @@ This framework outlines the processes and tools the team will use to maintain mo
     3.  If the team cannot reach a consensus, the Project Lead will make a final decision after considering all viewpoints.
     4.  For critical issues that impact the project scope or timeline, the matter will be escalated to the Project Supervisor for guidance.
 
-#### **4. Document and Configuration Management**
+#### 4. Document and Configuration Management
 
 A systematic approach to managing project assets is crucial for consistency and collaboration.
 
@@ -117,7 +106,7 @@ A systematic approach to managing project assets is crucial for consistency and 
     *   **Collaborative Editing:** Microsoft Office 365 (Word, Excel, PowerPoint) will be used for real-time collaborative editing and commenting.
     *   **Backup Strategy:** In addition to cloud storage, critical documents will be backed up manually on a bi-weekly basis to a separate offline storage device.
 
-#### **5. Risk Management**
+#### 5. Risk Management
 
 A proactive approach to risk management is essential. The following register identifies potential risks and outlines a plan to address them. This register will be reviewed and updated at the beginning of each sprint.
 
@@ -132,17 +121,17 @@ A proactive approach to risk management is essential. The following register ide
 | **R6** | **Simulated Data Unrealistic:** The patient data simulator produces data that is too simplistic or does not accurately reflect real-world health patterns, leading to a poorly trained AI model. | Medium | Medium | Backend Developer | **Mitigation:** Research common patterns in chronic disease data (e.g., post-meal glucose spikes, effect of exercise). Incorporate randomness and variability into the simulator to mimic real patient behavior. <br> **Contingency:** Consult with Dr. Vong or external resources to refine the simulation logic. Use a public, anonymized health dataset as a reference to validate the simulator's output distribution. |
 
 ---
-### **PART 2: PROJECT OVERVIEW AND PLAN**
+### PART 2: PROJECT OVERVIEW AND PLAN
 
 This section details the project itself, covering the problem it aims to solve, its boundaries, objectives, technical architecture, and the roadmap for its execution.
 
-#### **1. Project Background and Problem Statement**
+#### 1. Project Background and Problem Statement
 
 **Background:** The management of chronic diseases like Type 2 Diabetes is a persistent challenge in modern healthcare. Patients are often overwhelmed by the need to constantly monitor various health metrics (blood glucose, diet, activity, etc.) and struggle to interpret this data effectively. Healthcare providers, in turn, lack the tools for real-time monitoring and are often limited to providing guidance during infrequent appointments, relying on incomplete, patient-recalled information. This results in a reactive, rather than proactive, approach to care.
 
 **Problem Statement:** Chronic disease patients lack a unified platform that integrates their fragmented health data and provides real-time, actionable, and personalised guidance. Existing digital health solutions often act as simple data repositories and do not fully leverage the power of Artificial Intelligence to detect early warning signs, predict adverse events, or provide context-aware recommendations. BioTective seeks to address this gap by developing a prototype solution that serves as an intelligent companion for patients and a powerful monitoring tool for clinicians, ultimately aiming to improve health outcomes through timely, AI-driven interventions.
 
-#### **2. Project Goals and SMART Objectives**
+#### 2. Project Goals and SMART Objectives
 
 *   **Project Goal:** To successfully design, develop, test, and deliver a high-fidelity prototype of an AI-Enabled Digital Health Platform that meets all the functional and non-functional requirements outlined in the project proposal by the end of the semester.
 
@@ -153,7 +142,7 @@ This section details the project itself, covering the problem it aims to solve, 
     4.  **Relevant:** The prototype directly addresses the problem statement provided by BioTective, demonstrating a solution that can enhance patient outcomes and improve the efficiency of chronic disease care, aligning with the company's mission.
     5.  **Time-bound:** The entire project, from planning to final prototype demonstration and documentation, will be completed within the official timeline of the COS40005 Computing Technology Project A unit.
 
-#### **3. Scope, Assumptions, and Constraints**
+#### 3. Scope, Assumptions, and Constraints
 
 *   **In-Scope:**
     *   Development of all features outlined in the six project milestones.
@@ -180,7 +169,7 @@ This section details the project itself, covering the problem it aims to solve, 
     *   The prototype will be developed using only simulated data due to the ethical and legal constraints of handling Protected Health Information (PHI).
     *   The budget for using third-party APIs (e.g., LLM providers) is limited and must be managed carefully.
 
-#### **4. Stakeholders**
+#### 4. Stakeholders
 
 | Stakeholder | Role | Interest/Expectations |
 | :--- | :--- | :--- |
@@ -189,7 +178,7 @@ This section details the project itself, covering the problem it aims to solve, 
 | **Patients & Clinicians** | End Users | (Represented by personas) Expect an intuitive, reliable, and useful platform that simplifies health management and provides valuable, trustworthy insights. |
 | **Development Team** | Executors | Aims to successfully deliver the project, gain practical experience in building a complex AI application, and achieve a high academic grade. |
 
-#### **5. Detailed Solution Approach and System Architecture**
+#### 5. Detailed Solution Approach and System Architecture
 
 The proposed architecture is a modern, decoupled system designed for scalability, security, and rapid development, leveraging best-in-class technologies for each component. This design is the result of a rigorous analysis of the cross-platform, backend, and AI framework landscapes.
 
@@ -221,7 +210,7 @@ The proposed architecture is a modern, decoupled system designed for scalability
   
 *(Conceptual Diagram: A flow chart showing patient data entering the system. It splits, with numerical data going to an XGBoost model for prediction. The prediction and qualitative data then go to a LangChain agent (LLM). The agent uses tools to query the Supabase DB, and finally outputs an action/recommendation back to the user via the Flutter app.)*
 
-#### **6. Detailed Product Backlog**
+#### 6. Detailed Product Backlog
 
 This backlog breaks down the project milestones into actionable user stories, which will be managed as GitHub Issues.
 
@@ -245,7 +234,7 @@ This backlog breaks down the project milestones into actionable user stories, wh
 | T6.1 | As a developer, I want to conduct end-to-end system testing using a multi-patient dataset to ensure all components function correctly together. | **High** | 8 | A comprehensive test plan is executed. All critical bugs are logged and resolved. | 3 |
 | T6.2 | As a team, we want to finalize all project documentation, including a comprehensive user guide and technical documentation, for final submission. | **High** | 13 | User guide for patients/clinicians is written. Technical documentation covers architecture and setup instructions. | 3 |
 
-#### **7. Quality Assurance Plan**
+#### 7. Quality Assurance Plan
 
 The team is committed to delivering a high-quality prototype. Quality is not just a final check but a continuous process integrated throughout the development lifecycle.
 
@@ -263,5 +252,3 @@ The team is committed to delivering a high-quality prototype. Quality is not jus
     *   **Reporting:** All bugs and defects must be reported as a **GitHub Issue** using a standardized bug report template.
     *   **Tracking:** Each bug will be labelled, assigned a priority (Critical, High, Medium, Low), and assigned to a team member.
     *   **Resolution:** A bug is considered resolved only after a fix has been committed, merged, and the fix has been verified by the original reporter or another team member.
-
-By adhering to this comprehensive plan, the team is well-positioned to navigate the complexities of the project and deliver a successful, high-impact prototype that meets the client's vision and exceeds academic expectations.
