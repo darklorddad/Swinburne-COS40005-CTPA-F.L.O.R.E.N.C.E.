@@ -2,6 +2,6 @@ fastapi
 uvicorn[standard]
 pydantic
 pydantic-settings
-supabase
+supabase>=2.0.0
 python-dotenv
 passlib[bcrypt]
