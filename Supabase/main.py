@@ -33,3 +33,24 @@ class PatientProfileResponse(BaseModel):
     name: Optional[str]
     # Add other fields you want to return to the user
 
+
+@app.get("/all-data")
+def get_all_database_info():
+    """
+    An endpoint to fetch all records from the main tables
+    in the database, based on the Pydantic models.
+    """
+    try:
+        # Fetch all patient profiles
+        profiles_response = supabase.table('patient_profiles').select('*').execute()
+        
+        # Fetch all daily logs
+        logs_response = supabase.table('daily_logs').select('*').execute()
+
+        return {
+            "patient_profiles": profiles_response.data,
+            "daily_logs": logs_response.data
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"An error occurred while fetching data: {str(e)}")
+
