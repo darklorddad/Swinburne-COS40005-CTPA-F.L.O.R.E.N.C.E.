@@ -2,25 +2,24 @@
 .aider*
 dld*
 
-# Sample Projects
+# Temp
+Patient-Data-Simulation-Generator
 flutteriment/
 flutteriment-three/ 
 Pro_Grocery-main/
 
 ---
 
-# Temp
-Patient-Data-Simulation-Generator
-
----
-
-# Documents (contains sensitive information)
+# Documents (contains sensitive information such as name, student ID, email and etc.)
 Group-List.xlsx 
 Group-to-Client-Email
 Team-availability
 COS40005-EAT40005-Team-and-Project-Plan-Group-7.pdf
 COS40005-EAT40005-Team-and-Project-Plan-Group-7.docx
 COS40005-EAT40005-Team-and-Project-Plan-V1.md
+
+# Environment variables (API keys, database credentials, secret tokens and etc. goes here)
+.env
 
 ---
 
