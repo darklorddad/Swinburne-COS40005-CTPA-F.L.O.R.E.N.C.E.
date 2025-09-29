@@ -21,20 +21,32 @@ supabase: Client = create_client(url, key)
 @app.get("/all-data")
 def get_all_database_info():
     """
-    An endpoint to fetch all records from the main tables
-    in the database, based on the Pydantic models.
+    An endpoint to automatically discover and fetch all records from all tables
+    in the public schema of the database.
     """
+    all_data = {}
     try:
-        # Fetch all patient profiles
-        profiles_response = supabase.table('patient_profiles').select('*').execute()
+        # Step 1: Call the RPC to get all table names.
+        # This requires the 'get_all_table_names' function created in the Supabase SQL Editor.
+        tables_response = supabase.rpc('get_all_table_names', {}).execute()
         
-        # Fetch all daily logs
-        logs_response = supabase.table('daily_logs').select('*').execute()
+        if tables_response.data:
+            table_names = [item['table_name'] for item in tables_response.data]
 
-        return {
-            "patient_profiles": profiles_response.data,
-            "daily_logs": logs_response.data
-        }
+            # Step 2: Loop through each table name and fetch its data.
+            for table_name in table_names:
+                records_response = supabase.table(table_name).select('*').execute()
+                all_data[table_name] = records_response.data
+        
+        return all_data
+
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"An error occurred while fetching data: {str(e)}")
+        error_message = str(e)
+        # Provide a helpful error if the user forgot to create the SQL function.
+        if "function public.get_all_table_names() does not exist" in error_message:
+            raise HTTPException(
+                status_code=500, 
+                detail="Error: The helper function 'get_all_table_names' was not found in your database. Please create it using the Supabase SQL Editor."
+            )
+        raise HTTPException(status_code=500, detail=f"An error occurred: {error_message}")
 
