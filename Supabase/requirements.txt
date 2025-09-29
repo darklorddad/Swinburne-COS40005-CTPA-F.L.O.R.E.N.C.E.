@@ -4,3 +4,4 @@ pydantic
 pydantic-settings
 supabase
 python-dotenv
+passlib[bcrypt]
