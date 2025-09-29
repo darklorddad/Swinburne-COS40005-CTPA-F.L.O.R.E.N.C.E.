@@ -14,7 +14,9 @@ load_dotenv()
 app = FastAPI()
 
 # Initialize Supabase client
-supabase: Client = create_client("https://oproybafrxjwwvsfeoyc.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9wcm95YmFmcnhqd3d2c2Zlb3ljIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1ODU3Mzg2MCwiZXhwIjoyMDc0MTQ5ODYwfQ.zDOjQ04fAewagzJTCoumpJBWMCtNCr9F5vvozPV6hGo")
+url: str = os.environ.get("SUPABASE_URL")
+key: str = os.environ.get("SUPABASE_KEY")
+supabase: Client = create_client(url, key)
 
 # --- Pydantic Models for Data Validation ---
 # These models ensure the data sent to your API has the correct shape and types.
