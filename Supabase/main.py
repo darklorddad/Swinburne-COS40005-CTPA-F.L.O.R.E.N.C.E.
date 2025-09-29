@@ -30,3 +30,4 @@ class PatientProfileResponse(BaseModel):
     user_id: str
     name: Optional[str]
     # Add other fields you want to return to the user
+
