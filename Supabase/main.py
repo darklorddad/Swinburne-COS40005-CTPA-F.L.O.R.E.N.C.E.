@@ -74,6 +74,72 @@ async def delete_record(table_name: str, record_id: int):
         raise HTTPException(status_code=500, detail=f"An error occurred: {error_message}")
 
 
+# --- Functions to retrieve all data from specific tables ---
+
+@app.get("/organisations")
+def get_organisations():
+    """Fetches all records from the 'organisations' table."""
+    try:
+        response = supabase.table('organisations').select('*').execute()
+        return response.data
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/users")
+def get_users():
+    """Fetches all records from the 'users' table."""
+    try:
+        response = supabase.table('users').select('*').execute()
+        return response.data
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/patient_profiles")
+def get_patient_profiles():
+    """Fetches all records from the 'patient_profiles' table."""
+    try:
+        response = supabase.table('patient_profiles').select('*').execute()
+        return response.data
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/clinician_profiles")
+def get_clinician_profiles():
+    """Fetches all records from the 'clinician_profiles' table."""
+    try:
+        response = supabase.table('clinician_profiles').select('*').execute()
+        return response.data
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/daily_patient_logs")
+def get_daily_patient_logs():
+    """Fetches all records from the 'daily_patient_logs' table."""
+    try:
+        response = supabase.table('daily_patient_logs').select('*').execute()
+        return response.data
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/patient_monitor_data")
+def get_patient_monitor_data():
+    """Fetches all records from the 'patient_monitor_data' table."""
+    try:
+        response = supabase.table('patient_monitor_data').select('*').execute()
+        return response.data
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/clinician_notes")
+def get_clinician_notes():
+    """Fetches all records from the 'clinician_notes' table."""
+    try:
+        response = supabase.table('clinician_notes').select('*').execute()
+        return response.data
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
 @app.put("/update/{table_name}/{record_id}")
 async def update_table(table_name: str, record_id: int, request: Request):
     """
