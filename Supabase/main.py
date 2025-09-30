@@ -1,12 +1,12 @@
 # main.py
 
 import os
-from fastapi import FastAPI, Depends, HTTPException, Header
+from fastapi import FastAPI, Depends, HTTPException, Header, Request
 from supabase import create_client, Client
 from gotrue.errors import AuthApiError
 from dotenv import load_dotenv
 from pydantic import BaseModel
-from typing import Optional
+from typing import Optional, Dict, Any
 
 # Load environment variables from .env file
 load_dotenv()
@@ -48,5 +48,27 @@ def get_all_database_info():
                 status_code=500, 
                 detail="Error: The helper function 'get_all_table_names' was not found in your database. Please create it using the Supabase SQL Editor."
             )
+        raise HTTPException(status_code=500, detail=f"An error occurred: {error_message}")
+
+
+@app.post("/insert/{table_name}")
+async def insert_table(table_name: str, request: Request):
+    """
+    An endpoint to insert a single record into a specified table.
+    The request body should be a JSON object representing the row to insert.
+    e.g., {"column1": "value1", "column2": "value2"}
+    """
+    try:
+        # Get the JSON data from the request body
+        record_data: Dict[str, Any] = await request.json()
+
+        # Insert the data into the specified table
+        response = supabase.table(table_name).insert(record_data).execute()
+        
+        return {"message": f"Successfully inserted data into {table_name}", "data": response.data}
+
+    except Exception as e:
+        # Catch potential errors, like table not found, or constraint violation.
+        error_message = str(e)
         raise HTTPException(status_code=500, detail=f"An error occurred: {error_message}")
 
