@@ -51,6 +51,33 @@ def get_all_database_info():
         raise HTTPException(status_code=500, detail=f"An error occurred: {error_message}")
 
 
+@app.put("/update/{table_name}/{record_id}")
+async def update_table(table_name: str, record_id: int, request: Request):
+    """
+    An endpoint to update a single record in a specified table by its ID.
+    The request body should be a JSON object with the columns to update.
+    e.g., {"name": "New Name"}
+    """
+    try:
+        update_data: Dict[str, Any] = await request.json()
+
+        # Perform the update operation targeting the specific record by its 'id'
+        response = supabase.table(table_name).update(update_data).eq("id", record_id).execute()
+
+        # Supabase returns data if the update was successful. If not, the list will be empty.
+        if not response.data:
+            raise HTTPException(status_code=404, detail=f"Record with id {record_id} not found in table {table_name}.")
+
+        return {"message": f"Successfully updated record {record_id} in {table_name}", "data": response.data}
+
+    except HTTPException as http_exc:
+        # Re-raise the HTTPException to ensure the correct status code (e.g., 404) is sent.
+        raise http_exc
+    except Exception as e:
+        error_message = str(e)
+        raise HTTPException(status_code=500, detail=f"An error occurred: {error_message}")
+
+
 @app.post("/insert/{table_name}")
 async def insert_table(table_name: str, request: Request):
     """
