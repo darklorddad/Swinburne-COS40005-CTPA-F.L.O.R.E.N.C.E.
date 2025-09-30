@@ -51,6 +51,29 @@ def get_all_database_info():
         raise HTTPException(status_code=500, detail=f"An error occurred: {error_message}")
 
 
+@app.delete("/delete/{table_name}/{record_id}")
+async def delete_record(table_name: str, record_id: int):
+    """
+    An endpoint to delete a single record from a specified table by its ID.
+    """
+    try:
+        # Perform the delete operation targeting the specific record by its 'id'
+        response = supabase.table(table_name).delete().eq("id", record_id).execute()
+
+        # If the data list is empty, it means no record was found with that ID to delete.
+        if not response.data:
+            raise HTTPException(status_code=404, detail=f"Record with id {record_id} not found in table {table_name}.")
+
+        return {"message": f"Successfully deleted record {record_id} from {table_name}", "data": response.data}
+
+    except HTTPException as http_exc:
+        # Re-raise the HTTPException to ensure the correct status code (e.g., 404) is sent.
+        raise http_exc
+    except Exception as e:
+        error_message = str(e)
+        raise HTTPException(status_code=500, detail=f"An error occurred: {error_message}")
+
+
 @app.put("/update/{table_name}/{record_id}")
 async def update_table(table_name: str, record_id: int, request: Request):
     """
