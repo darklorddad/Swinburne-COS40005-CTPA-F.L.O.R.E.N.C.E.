@@ -32,7 +32,7 @@ class OverviewScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text("Welcome back, Jordan!", style: TextStyle(fontSize: 28, color: Colors.black, fontWeight: FontWeight.bold)),
+          const Text("Welcome back, Tom!", style: TextStyle(fontSize: 28, color: Colors.black, fontWeight: FontWeight.bold)),
           const SizedBox(height: 24),
           const SummaryCardsGrid(),
           const SizedBox(height: 24),
@@ -70,7 +70,7 @@ class OverviewScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
-          Text("Welcome back, Jordan!", style: TextStyle(fontSize: 24, color: Colors.black, fontWeight: FontWeight.bold)),
+          Text("Welcome back, Tom!", style: TextStyle(fontSize: 24, color: Colors.black, fontWeight: FontWeight.bold)),
           SizedBox(height: 16),
           SummaryCardsGrid(),
           SizedBox(height: 16),

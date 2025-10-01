@@ -13,7 +13,7 @@ class _ChatbotScreenState extends State<ChatbotScreen> {
   // A list to hold mock chat messages
   final List<ChatMessage> _messages = [
     ChatMessage(
-      text: "Hi Jordan, I'm your AI health assistant. How can I help you today?",
+      text: "Hi Tom, I'm your AI health assistant. How can I help you today?",
       isUser: false,
     ),
   ];

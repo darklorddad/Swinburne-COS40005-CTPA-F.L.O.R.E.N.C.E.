@@ -110,12 +110,12 @@ class ProfileHeader extends StatelessWidget {
         ),
         const SizedBox(height: 16),
         const Text(
-          'Jordan Smith',
+          'Thomas Anderson',
           style: TextStyle(color: Colors.black, fontSize: 24, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 4),
         Text(
-          'jordan.smith@gmail.com',
+          'thomas.anderson@gmail.com',
           style: TextStyle(fontSize: 16, color: Colors.grey[700]),
         ),
       ],

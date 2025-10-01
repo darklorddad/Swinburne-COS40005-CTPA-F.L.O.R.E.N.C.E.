@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../screens/overview.dart';
 import '../screens/chatbot.dart';
 import '../screens/profile.dart';
+import '../screens/auth/front_page.dart';
 
 class MainLayout extends StatefulWidget {
   const MainLayout({super.key});
@@ -77,7 +78,41 @@ class _MainLayoutState extends State<MainLayout> {
               padding: EdgeInsets.symmetric(vertical: 8.0),
               child: Chip(label: Row(children: [Text('PROFILE')])),
             ),
-            IconButton(icon: Icon(Icons.logout), onPressed: () {}),
+            IconButton(icon: Icon(Icons.logout), onPressed: () {
+              // Show a confirmation dialog before logging out
+        showDialog(
+          context: context,
+          builder: (BuildContext dialogContext) {
+            return AlertDialog(
+              title: const Text('Confirm Logout'),
+              content: const Text('Are you sure you want to log out?'),
+              actions: <Widget>[
+                // "Cancel" button
+                TextButton(
+                  child: const Text('Cancel'),
+                  onPressed: () {
+                    // Just close the dialog
+                    Navigator.of(dialogContext).pop();
+                  },
+                ),
+                // "Logout" button
+                TextButton(
+                  child: const Text('Logout'),
+                  onPressed: () {
+                    // This is the core navigation logic.
+                    // It pushes the FrontPage and removes all routes behind it.
+                    Navigator.of(dialogContext).pushAndRemoveUntil(
+                      MaterialPageRoute(builder: (context) => const FrontPage()),
+                      (Route<dynamic> route) => false,
+                    );
+                  },
+                ),
+              ],
+            );
+          },
+        );
+            },
+            ),
             SizedBox(width: 20),
           ],
         ),
